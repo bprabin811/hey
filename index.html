@@ -1,72 +1,111 @@
 <!DOCTYPE html>
 <html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css"
+    />
 
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css">
-    
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="style.css" />
     <title>Prabin Bhatta</title>
-</head>
+  </head>
 
-<body class="main-content">
+  <body class="main-content">
     <header>
-        <section class="section sec1 home active" id="home">
-            <div class="aside">
-                <div class="profile">
-                    <img src="static/profile.jpg" alt="">
-                </div>
-                <div class="logo">
-                    <a href="#"><span>Pro</span>win</a>
-                </div>
-                <div class="follow">
-                    <a href="{{insta}}"
-                      ><i class="fa-brands fa-instagram" style="color: rgb(145, 9, 32)"></i
-                    ></a>
-                    <a href="{{github}}"
-                      ><i class="fa-brands fa-github" style="color: black"></i
-                    ></a>
-                    <a href="{{fb}}"
-                      ><i class="fa-brands fa-facebook" style="color: rgb(23, 61, 184)"></i
-                    ></a>
-                    <a href="{{snap}}">
-                      <i class="fa-brands fa-snapchat" style="color: #e8ec22"></i
-                    ></a>
-                </div>
-            </div>
-        </section>
+      <section class="section sec1 home active" id="home">
+        <div class="aside">
+          <div class="profile">
+            <img src="static/profile.jpg" alt="" />
+          </div>
+          <div class="logo">
+            <a href="#"><span>Pro</span>win</a>
+          </div>
+          <div class="follow">
+            <a href="{{insta}}"
+              ><i
+                class="fa-brands fa-instagram"
+                style="color: rgb(145, 9, 32)"
+              ></i
+            ></a>
+            <a href="{{github}}"
+              ><i class="fa-brands fa-github" style="color: black"></i
+            ></a>
+            <a href="{{fb}}"
+              ><i
+                class="fa-brands fa-facebook"
+                style="color: rgb(23, 61, 184)"
+              ></i
+            ></a>
+            <a href="{{snap}}">
+              <i class="fa-brands fa-snapchat" style="color: #e8ec22"></i
+            ></a>
+          </div>
+        </div>
+      </section>
     </header>
     <!-- section start -->
     <main>
-        <section class="section sec2 designs" id="designs"><h2>DESIGNS</h2></section>
-        <section class="section sec3 blogs" id="blogs"><h2>BLOGS</h2></section>
-        <section class="section sec4 tools" id="tools"><h2>USEFUL TOOLS</h2></section>
-        <section class="section sec5 contact" id="contact">
-            <div class="contact-form">
-                <form action="/submit_form" method="post">
-                    <!-- <h2>CONTACT</h2> -->
-                    
-                    <label for="name">Name:</label>
-                    <input type="text" id="name" name="name" required />
-                    <label for="email">Email:</label>
-                    <input type="email" id="email" name="email" required />
-                    <label for="message">Message:</label>
-                    <textarea id="message" name="message" rows="10" required></textarea>
-                    <button type="submit" class="btn">Send</button>
-                  </form>
-            </div>
-        </section>
+      <section class="section sec2 designs" id="designs">
+        <div class="work-done">
+            <h2>Projects</h2>
+          <div class="item">
+            <img src="static/imagelabai.png" alt="" />
+            <h3>ImageLab-AI: Image Colorization using CNN</h3>
+            <a href="https://imagelabai.onrender.com">View</a>
+          </div>
+          <div class="item">
+            <img src="static/emart.png" alt="" />
+            <h3>Multi-Store E-mart for Vegetables</h3>
+            <a href="#">View</a>
+          </div>
+          <div class="item">
+            <img src="static/kidzworld.png" alt="" />
+            <h3>KidzWorld: A Learning Platform for Kids</h3>
+            <a href="https://drive.google.com/file/d/1adkn1qKGwksYlCYIM48cwn4bRSlOeXgQ/view?usp=share_link">Download</a>
+          </div>
+          <div class="item" id="game">
+            <img src="static/helix-infinite.jpg" alt="" />
+            <h3>Helix-Infinite</h3>
+            <a href="https://drive.google.com/file/d/1wRafvSkNovI-wM4LSh6jOgL6HeFJrwQe/view?usp=share_link">Download</a>
+          </div>
+        </div>
+      </section>
+      <!-- <section class="section sec3 blogs" id="blogs"></section> -->
+      <!-- <section class="section sec4 tools" id="tools"></section> -->
+      <section class="section sec5 contact" id="contact">
+        <div class="contact-form">
+          <form action="/submit_form" method="post">
+            <label for="name">Name:</label>
+            <input type="text" id="name" name="name" required />
+            <label for="email">Email:</label>
+            <input type="email" id="email" name="email" required />
+            <label for="message">Message:</label>
+            <textarea id="message" name="message" rows="10" required></textarea>
+            <button type="submit" class="btn">Send</button>
+          </form>
+        </div>
+      </section>
     </main>
     <div class="controlls">
-        <div class="control control-1 active-btn" data-id="home"><i class="fa fa-home" aria-hidden="true"></i></div>
-        <div class="control control-4" data-id="designs"><i class="fa fa-list" aria-hidden="true"></i></div>
-        <div class="control control-3" data-id="blogs"><i class="fa fa-file-text" aria-hidden="true"></i></div>
-        <div class="control control-2" data-id="tools"><i class="fa fa-wrench" aria-hidden="true"></i>        </div>
-        <div class="control control-5" data-id="contact"><i class="fa fa-phone" aria-hidden="true"></i></div>
+      <div class="control control-1 active-btn" data-id="home">
+        <i class="fa fa-home" aria-hidden="true"></i>
+      </div>
+      <div class="control control-4" data-id="designs">
+        <i class="fa fa-list" aria-hidden="true"></i>
+      </div>
+      <!-- <div class="control control-3" data-id="blogs">
+        <i class="fa fa-file-text" aria-hidden="true"></i>
+      </div>
+      <div class="control control-2" data-id="tools">
+        <i class="fa fa-wrench" aria-hidden="true"></i>
+      </div> -->
+      <div class="control control-5" data-id="contact">
+        <i class="fa fa-phone" aria-hidden="true"></i>
+      </div>
     </div>
     <script src="app.js"></script>
-</body>
-
+  </body>
 </html>
