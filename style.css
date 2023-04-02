@@ -11,6 +11,7 @@
 :root {
     --color-primary: #351322;
     --color-secondary: #27ae60;
+    --color-pink: rgba(138, 12, 33, 0.727);
     --color-white: white;
     --color-black: black;
     --bg-black-900: #f2f2fc;
@@ -36,6 +37,7 @@ a {
 header {
     height: 100vh;
     color: white;
+    /* background-color: #27ae60; */
     overflow: hidden;
 }
 
@@ -45,7 +47,7 @@ section {
     position: absolute;
     right: 0;
     top: 0;
-    padding: 2rem 10rem;
+    padding: 2rem 5rem;
 }
 
 .section {
@@ -113,7 +115,7 @@ section {
 }
 
 .controlls .active-btn {
-    background-color: var(--color-primary) !important;
+    background-color: var(--color-pink) !important;
     transition: all .4s ease-in-out;
 }
 
@@ -121,8 +123,8 @@ section {
     padding: 1rem;
     background-color: rgba(128, 128, 128, 0.441);
     cursor: pointer;
-    width: 50px;
-    height: 50px;
+    width: 30px;
+    height: 30px;
     border-radius: 50%;
     display: flex;
     align-items: center;
@@ -133,7 +135,7 @@ section {
 }
 
 .controlls .control i {
-    font-size: 1.5rem;
+    font-size: 1rem;
     color: rgb(255, 255, 255);
     pointer-events: none;
 }
@@ -153,7 +155,7 @@ section {
     color: var(--color-primary)
   }
   form input,button{
-    width: 250px;
+    width: 280px;
     height: 30px;
     padding: 5px;
     margin: 10px 0;
@@ -161,7 +163,7 @@ section {
     border-radius: 5px;
   }
   form textarea{
-    width: 250px;
+    width: 280px;
     overflow: hidden;
     padding: 5px;
     margin: 10px 0;
@@ -175,7 +177,7 @@ section {
     border-radius: 5px;
   }
   .btn:hover{
-    background-color: lightgreen;
+    background-color: var(--color-pink);
     cursor: pointer;
   }
   #contact h2{
@@ -187,8 +189,9 @@ section {
   
 .aside{
     /* border: 2px solid red; */
+    z-index: 15;
     height: 90vh;
-    /* width: 80vw; */
+    width: 100vw;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -201,7 +204,7 @@ section {
     text-transform: capitalize;
 }
 .aside .logo a {
-    color: var(--color-secondary);
+    color: var(--color-pink);
     font-weight: 700;
     padding: 5px 10px;
     font-size: 50px;
@@ -216,10 +219,10 @@ section {
 .aside .logo a::before {
     content: '';
     position: absolute;
-    width: 10px;
+    width: 20px;
     height: 10px;
-    border-bottom: 2px solid var(--color-primary);
-    border-left: 2px solid var(--color-primary);
+    border-bottom: 5px solid var(--color-primary);
+    border-left: 5px solid var(--color-primary);
     border-bottom-left-radius: 2px;
     bottom: 0;
     left: 0;
@@ -227,10 +230,10 @@ section {
 .aside .logo a::after {
     content: '';
     position: absolute;
-    width: 10px;
+    width: 20px;
     height: 10px;
-    border-top: 2px solid var(--color-primary);
-    border-right: 2px solid var(--color-primary);
+    border-top: 5px solid var(--color-pink);
+    border-right: 5px solid var(--color-pink);
     border-top-right-radius: 2px;
     top: 0;
     right: 0;
@@ -239,9 +242,10 @@ section {
     margin-top: 10px;
     display: flex;
     flex-direction: row;
+    justify-content: space-between;
 }
 .follow i{
-   font-size: 25px;
+   font-size: 2rem;
    margin: 20px;
 }
 
