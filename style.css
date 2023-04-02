@@ -264,7 +264,7 @@ section {
     justify-content: center;
 }
 .item{
-    height: 250px;
+    height: 300px;
     width: 250px;
     /* box-shadow: 0px 0px 10px 2px rgba(239, 234, 234, 0.911); */
     border-radius: 5px;
@@ -275,8 +275,8 @@ section {
     /* flex-wrap: wrap; */
     flex-direction: column;
 }
-#game{
-    height: 400px;
+#game img{
+    width: 150px;
 }
 .item img{
     width: 200px;
@@ -303,4 +303,9 @@ section {
       .work-done{
         width: 80vw;
       }
+      .item{
+        
+        box-shadow: 0px 0px 10px 2px rgba(239, 234, 234, 0.911);
+      
+    }
 }
