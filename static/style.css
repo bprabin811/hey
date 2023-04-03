@@ -309,7 +309,8 @@ section {
     justify-content: center;
 }
 .title p{
-    text-align: justify;
+    text-align: start;
+    font-size: 10px;
 }
 
 @media only screen and (min-width: 550px) {
