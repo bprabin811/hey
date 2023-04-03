@@ -150,7 +150,7 @@ section {
     justify-content: space-evenly;
   }
 
-  /* form{
+   form{
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -187,7 +187,7 @@ section {
   .btn:hover{
     background-color: var(--color-pink);
     cursor: pointer;
-  } */
+  } 
   #contact h2{
     color: rgb(23, 19, 19);
     margin: 20px 0;
