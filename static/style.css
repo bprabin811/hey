@@ -217,7 +217,7 @@ form textarea {
   position: relative;
 }
 .aside .logo a span {
-  font-family: "Clicker Script", cursive;
+  /* font-family: "Clicker Script", cursive; */
   font-size: 40px;
   color: var(--color-primary);
 }
