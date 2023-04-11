@@ -142,6 +142,11 @@ header {
   border-radius: 50%;
 }
 
+.cv-download a{
+  color: green;
+  margin-top: 10px;
+}
+
 .work-done {
   border-radius: 20px;
   min-height: 125vh;
@@ -290,7 +295,7 @@ form textarea {
     left: 0;
     width: 100%;
     height: 50%;
-    background-color: #f775a8;
+    background-color: var(--color-primary);
     transform-origin: bottom right;
     transform: skewY(35deg);
     z-index: -1;
