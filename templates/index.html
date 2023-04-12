@@ -13,7 +13,7 @@
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css"
     />
-
+    
     <link rel="stylesheet" href="../static/style.css" />
     <script defer src="../static/app.js"></script>
     <title>Prabin Bhatta</title>
@@ -28,6 +28,7 @@
         <div class="logo">
           <a href="#"><span>Pro</span>win</a>
         </div>
+        
 
         <div class="follow">
           <a href="https://www.instagram.com/pro_win811"
@@ -57,15 +58,33 @@
         <div class="cv-download">
           <a href="">Download CV</a>
         </div>
+
+        
       </div>
     </header>
     <!-- section start -->
     <main>
+      <section class="section sec3 service" id="service">
+        <div class="services">
+          <div class="title">
+            <h2>S e r v i c e s</h2>
+          </div>
+          <div class="service-type" id="ai">
+            <h3>AI & Machine</h3>
+            <h2>Learning</h2>
+          </div>
+          <div class="service-type" id="design">
+            <h3>App/Web</h3>
+            <h2>Design</h2>
+          </div>
+        </div>
+      </section>
       <section class="section sec2 designs" id="designs">
         <div class="work-done">
           <div class="title">
             <h2>P r o j e c t s</h2>
           </div>
+          
           {% for item in items %}
           <div class="item">
             
@@ -79,7 +98,7 @@
           {% endfor %}
         </div>
       </section>
-      <!-- <section class="section sec3 blogs" id="blogs"></section> -->
+     
       <!-- <section class="section sec4 tools" id="tools"></section> -->
       <section class="section sec5 contact" id="contact">
         <div class="contact-form">
