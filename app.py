@@ -3,7 +3,6 @@ from pymongo import MongoClient
 from PIL import Image
 import base64
 import io
-# from db import retrive_data
 
 client = MongoClient('mongodb+srv://prabin:bprabin@cluster0.2phmxej.mongodb.net/test')
 db = client['pro']
