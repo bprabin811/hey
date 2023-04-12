@@ -66,4 +66,4 @@ def submit_form():
         'message': message
     })
 
-    return render_template('index.html')
+    return '<p>Form submitted Successfully.</p>'
