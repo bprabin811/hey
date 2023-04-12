@@ -103,8 +103,8 @@ header {
   position: absolute;
   width: 20px;
   height: 10px;
-  border-bottom: 3px solid var(--color-primary);
-  border-left: 3px solid var(--color-primary);
+  border-bottom: 3px solid var(--color-secondary);
+  border-left: 3px solid var(--color-secondary);
   border-bottom-left-radius: 2px;
   bottom: 0;
   left: 0;
@@ -208,9 +208,21 @@ header {
   align-items: center;
   justify-content: center;
 }
+.title h2{
+  color: #27ae60;
+  font-weight: bolder;
+  padding: 5px;
+}
+.title h2{
+  content: "";
+  display: block;
+  border-bottom: 2px solid #27ae60;
+  margin-bottom: 10px;
+}
+
 .title p {
   text-align: justify;
-  font-size: 12px;
+  font-size: 1em;
   margin: 2rem 10%;
 }
 
@@ -262,7 +274,16 @@ form textarea {
   margin: 10px 0;
   border: 1px solid rgba(128, 128, 128, 0.403);
   border-radius: 5px;
+  resize: none;
 }
+
+form input:focus,
+select:focus,
+textarea:focus,
+button:focus {
+  outline: none;
+}
+
 
 .btn {
   background-color: var(--color-secondary);
@@ -274,15 +295,16 @@ form textarea {
   cursor: pointer;
 }
 
+
 @media only screen and (max-width: 550px) {
   .aside {
-    height: 80vh;
+    min-height: 80vh;
   }
   .contact-form {
-    height: 1000px;
+    min-height: 1000px;
   }
   .work-done {
-    height: 2400px;
+    min-height: 2400px;
   }
   .form-container {
     flex-direction: column;
@@ -294,10 +316,20 @@ form textarea {
     top: 0;
     left: 0;
     width: 100%;
-    height: 50%;
+    height: 75%;
     background-color: var(--color-primary);
     transform-origin: bottom right;
     transform: skewY(35deg);
+    animation: slideDown 1s forwards;
     z-index: -1;
   }
+  @keyframes slideDown {
+    0% {
+      top: -100%;
+    }
+    100% {
+      top: 0;
+    }
+  }
+
 }
