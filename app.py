@@ -2,10 +2,56 @@ from flask import Flask, render_template,request
 from pymongo import MongoClient
 from PIL import Image
 import base64
+import json
 import io
+from flask import Flask, jsonify
+import json
+from bson import ObjectId
+from flask_cors import CORS
 
 client = MongoClient('mongodb+srv://prabin:bprabin@cluster0.2phmxej.mongodb.net/test')
 db = client['pro']
+
+# Select the database
+db_prowin = client["ProwinDesigns"]
+
+# Select the collection
+collection = db_prowin["projects"]
+appdesigns_collection=db_prowin["appdesigns"]
+
+app = Flask(__name__,static_folder='static',template_folder='templates')
+CORS(app, origins=['https://bprabin.com.np'])
+
+
+@app.route('/projects')
+def get_data():
+    data = collection.find()
+    result = []
+    for doc in data:
+        # Convert ObjectId to string
+        doc["_id"] = str(doc["_id"])
+        # Encode binary data as Base64
+        if "image" in doc:
+            doc["image"] = base64.b64encode(doc["image"]).decode("utf-8")
+        result.append(doc)
+    json_data = json.dumps(result)
+    return json_data
+
+
+@app.route('/appdesigns')
+def get_appdesigns_data():
+    data = appdesigns_collection.find()
+    result = []
+    for doc in data:
+        # Convert ObjectId to string
+        doc["_id"] = str(doc["_id"])
+        # Encode binary data as Base64
+        if "image" in doc:
+            doc["image"] = base64.b64encode(doc["image"]).decode("utf-8")
+        result.append(doc)
+    json_data = json.dumps(result)
+    return json_data
+
 
 name=[
     "KidzWorld: Learn With Fun",
@@ -15,7 +61,8 @@ name=[
     "Depression Analysis using Chatbot",
     "Churn Prediction System",
 ]
-app = Flask(__name__,static_folder='static',template_folder='templates')
+
+
 
 items=[]
 
@@ -67,3 +114,8 @@ def submit_form():
     })
 
     return '<p>Form submitted Successfully.</p>'
+
+
+
+
+
