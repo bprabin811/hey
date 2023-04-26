@@ -18,6 +18,7 @@ db_prowin = client["ProwinDesigns"]
 # Select the collection
 collection = db_prowin["projects"]
 appdesigns_collection=db_prowin["appdesigns"]
+webdesigns_collection=db_prowin["webdesigns"]
 
 app = Flask(__name__,static_folder='static',template_folder='templates')
 CORS(app, origins=['https://bprabin.com.np'])
@@ -41,6 +42,21 @@ def get_data():
 @app.route('/appdesigns')
 def get_appdesigns_data():
     data = appdesigns_collection.find()
+    result = []
+    for doc in data:
+        # Convert ObjectId to string
+        doc["_id"] = str(doc["_id"])
+        # Encode binary data as Base64
+        if "image" in doc:
+            doc["image"] = base64.b64encode(doc["image"]).decode("utf-8")
+        result.append(doc)
+    json_data = json.dumps(result)
+    return json_data
+
+
+@app.route('/webdesigns')
+def get_webdesigns_data():
+    data = webdesigns_collection.find()
     result = []
     for doc in data:
         # Convert ObjectId to string

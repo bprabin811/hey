@@ -10,12 +10,12 @@ db = client["ProwinDesigns"]
 
 # Select the collection
 # collection = db["projects"]
+# collection = db["appdesigns"]
+collection = db["webdesigns"]
 
-collection = db["appdesigns"]
 
 
-
-imageLink=['hey\\images\\shopping_app.png','hey\\images\\shoppy _app.png','hey\\images\\compass.png']
+imageLink=['hey\\images\\neumorphism_card.png','hey\\images\\glassmorphism_login.png']
 image_data=[]
 
 # Define the image data
@@ -55,34 +55,56 @@ for i in range(len(imageLink)):
 # ]
 
 
+# data=[
+#   {
+#     "title": "Shopping Store App",
+#     "image": image_data[0],
+#     "link": "https://github.com/bprabin811/Shopping-Store",
+#     "action": "View Code",
+#     "date": "March 5",
+#     "type": "app",
+#     "language": "Flutter"
+#   },
+#   {
+#     "title": "HomePage for ecommerce App",
+#     "image": image_data[1],
+#     "link": "https://github.com/bprabin811/Shoppy-A-MarketPlace",
+#     "action": "View Code",
+#     "date": "March 16",
+#     "type": "app",
+#     "language": "Flutter"
+#   },
+#   {
+#     "title": "Compass Using Flutter",
+#     "image": image_data[2],
+#     "link": "https://github.com/bprabin811/Compass",
+#     "action": "View Code",
+#     "date": "Feb 18",
+#     "type": "app",
+#     "language": "Flutter"
+#   }
+# ]
+
+
 data=[
   {
-    "title": "Shopping Store App",
+    "title": "Neumorphism Effects in CSS",
     "image": image_data[0],
-    "link": "https://github.com/bprabin811/Shopping-Store",
+    "link": "https://github.com/bprabin811/neumorphism-card-html ",
     "action": "View Code",
-    "date": "March 5",
-    "type": "app",
-    "language": "Flutter"
+    "date": "March 18",
+    "type": "web",
+    "language": "HTML/CSS"
   },
   {
-    "title": "HomePage for ecommerce App",
+    "title": "LoginPage with Glassmorphism",
     "image": image_data[1],
-    "link": "https://github.com/bprabin811/Shoppy-A-MarketPlace",
+    "link": "https://github.com/bprabin811/glassmorphism-html" ,
     "action": "View Code",
-    "date": "March 16",
-    "type": "app",
-    "language": "Flutter"
+    "date": "Jan 26",
+    "type": "web",
+    "language": "HTML/CSS"
   },
-  {
-    "title": "Compass Using Flutter",
-    "image": image_data[2],
-    "link": "https://github.com/bprabin811/Compass",
-    "action": "View Code",
-    "date": "Feb 18",
-    "type": "app",
-    "language": "Flutter"
-  }
 ]
 
 
