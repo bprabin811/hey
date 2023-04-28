@@ -21,7 +21,7 @@ appdesigns_collection=db_prowin["appdesigns"]
 webdesigns_collection=db_prowin["webdesigns"]
 
 app = Flask(__name__,static_folder='static',template_folder='templates')
-CORS(app, origins=['https://bprabin.com.np'])
+CORS(app, origins=['https://uiboxx.in'])
 
 
 @app.route('/projects')
