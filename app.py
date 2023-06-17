@@ -8,6 +8,8 @@ from flask import Flask, jsonify
 import json
 from bson import ObjectId
 from flask_cors import CORS
+import openai
+
 
 client = MongoClient('mongodb+srv://prabin:bprabin@cluster0.2phmxej.mongodb.net/test')
 db = client['pro']
@@ -21,12 +23,64 @@ appdesigns_collection=db_prowin["appdesigns"]
 webdesigns_collection=db_prowin["webdesigns"]
 
 app = Flask(__name__,static_folder='static',template_folder='templates')
-CORS(app, origins=['https://uiboxx.in'])
+# CORS(app, origins=['https://bprabin.com.np'])
+CORS(app, origins=['http://uiboxx.in'])
 
 
 @app.route('/projects')
 def get_data():
     data = collection.find()
+    result = []
+    for doc in data:
+        # Convert ObjectId to string
+        doc["_id"] = str(doc["_id"])
+        # Encode binary data as Base64
+        if "image" in doc:
+            doc["image"] = base64.b64encode(doc["image"]).decode("utf-8")
+        result.append(doc)
+    json_data = json.dumps(result)
+    return json_data
+
+
+# ---------------------------
+
+# Set your OpenAI API key
+openai.api_key = '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'
+
+@app.route('/generate-code', methods=['GET'])
+def generate_profile_card():
+    prompt_text = request.args.get('prompt', ''+' write HTML and CSS in same file index.html')
+
+    response = openai.Completion.create(
+        engine='text-davinci-003',
+        prompt=prompt_text,
+        max_tokens=2500
+    )
+
+    generated_text = response.choices[0].text.strip()
+    return jsonify({'gen_code': generated_text})
+
+# def generate_response(prompt):
+#     response = openai.Completion.create(
+#         engine='text-davinci-003',  # Choose the most suitable engine for your use case
+#         prompt=prompt,
+#         max_tokens=500  # Specify the maximum length of the generated response
+#     )
+
+#     generated_text = response.choices[0].text.strip()
+#     return generated_text
+
+# # Example usage
+# prompt_text = "can you make a beautiful profile card using html and css?"
+# generated_response = generate_response(prompt_text)
+# print(generated_response)
+
+# ---------------------------
+
+
+@app.route('/webdesigns')
+def get_webdesigns_data():
+    data = webdesigns_collection.find()
     result = []
     for doc in data:
         # Convert ObjectId to string
@@ -54,19 +108,23 @@ def get_appdesigns_data():
     return json_data
 
 
-@app.route('/webdesigns')
-def get_webdesigns_data():
-    data = webdesigns_collection.find()
-    result = []
-    for doc in data:
-        # Convert ObjectId to string
-        doc["_id"] = str(doc["_id"])
-        # Encode binary data as Base64
-        if "image" in doc:
-            doc["image"] = base64.b64encode(doc["image"]).decode("utf-8")
-        result.append(doc)
-    json_data = json.dumps(result)
-    return json_data
+# @app.route('/appdesigns/<string:id>/likes', methods=['PUT'])
+# def update_design_likes(id):
+#     # Find the design by its ID
+#     design = appdesigns_collection.find_one({"id": id})
+#     if design:
+#         # Get the new likes count from the request body
+#         likes = request.json.get('likes', None)
+#         if likes is not None:
+#             # Update the likes count in the design object
+#             design['likes'] = likes
+#             # Update the design in the database
+#             appdesigns_collection.update_one({"id": id}, {"$set": design})
+#             return jsonify({"message": "Likes updated successfully"})
+#         else:
+#             return jsonify({"message": "Likes count not found in request body"}), 400
+#     else:
+#         return jsonify({"message": "Design not found"}), 400
 
 
 name=[
