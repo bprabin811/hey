@@ -50,7 +50,7 @@ def get_data():
 
 load_dotenv()
 
-openai.api_key = os.getenv("API_KEY")
+openai.api_key = os.getenv("OPENAI_API_KEY")
 
 @app.route('/generate-code', methods=['GET'])
 def generate_profile_card():
