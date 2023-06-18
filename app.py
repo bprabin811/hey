@@ -9,6 +9,8 @@ import json
 from bson import ObjectId
 from flask_cors import CORS
 import openai
+from dotenv import load_dotenv
+import os
 
 
 client = MongoClient('mongodb+srv://prabin:bprabin@cluster0.2phmxej.mongodb.net/test')
@@ -45,7 +47,10 @@ def get_data():
 # ---------------------------
 
 # Set your OpenAI API key
-openai.api_key = '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'
+
+load_dotenv()
+
+openai.api_key = os.getenv("API_KEY")
 
 @app.route('/generate-code', methods=['GET'])
 def generate_profile_card():
